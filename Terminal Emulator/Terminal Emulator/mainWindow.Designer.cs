@@ -1,6 +1,6 @@
 ﻿namespace Terminal_Emulator
 {
-    partial class Form1
+    partial class mainWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,7 @@
             this.rxTextBox = new System.Windows.Forms.RichTextBox();
             this.bSend = new System.Windows.Forms.Button();
             this.bClearRxText = new System.Windows.Forms.Button();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.comPort = new System.IO.Ports.SerialPort(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,6 +79,10 @@
             this.bClearRxText.Text = "Clear";
             this.bClearRxText.UseVisualStyleBackColor = true;
             this.bClearRxText.Click += new System.EventHandler(this.bClearRxText_Click);
+            // 
+            // comPort
+            // 
+            this.comPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.comPort_DataReceived);
             // 
             // menuStrip1
             // 
@@ -128,6 +132,7 @@
             this.serialOptionsToolStripMenuItem.Name = "serialOptionsToolStripMenuItem";
             this.serialOptionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.serialOptionsToolStripMenuItem.Text = "Serial Options";
+            this.serialOptionsToolStripMenuItem.Click += new System.EventHandler(this.serialOptionsToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -148,6 +153,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -161,7 +167,7 @@
         private System.Windows.Forms.RichTextBox rxTextBox;
         private System.Windows.Forms.Button bSend;
         private System.Windows.Forms.Button bClearRxText;
-        private System.IO.Ports.SerialPort serialPort1;
+        private System.IO.Ports.SerialPort comPort;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
