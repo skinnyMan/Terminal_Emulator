@@ -1,0 +1,7 @@
+C:\Users\AJ\Documents\git\visual_studio\Terminal Emulator\Terminal Emulator\bin\Debug\Terminal Emulator.exe
+C:\Users\AJ\Documents\git\visual_studio\Terminal Emulator\Terminal Emulator\bin\Debug\Terminal Emulator.pdb
+C:\Users\AJ\Documents\git\visual_studio\Terminal Emulator\Terminal Emulator\obj\x86\Debug\Terminal_Emulator.Form1.resources
+C:\Users\AJ\Documents\git\visual_studio\Terminal Emulator\Terminal Emulator\obj\x86\Debug\Terminal_Emulator.Properties.Resources.resources
+C:\Users\AJ\Documents\git\visual_studio\Terminal Emulator\Terminal Emulator\obj\x86\Debug\Terminal Emulator.csproj.GenerateResource.Cache
+C:\Users\AJ\Documents\git\visual_studio\Terminal Emulator\Terminal Emulator\obj\x86\Debug\Terminal Emulator.exe
+C:\Users\AJ\Documents\git\visual_studio\Terminal Emulator\Terminal Emulator\obj\x86\Debug\Terminal Emulator.pdb

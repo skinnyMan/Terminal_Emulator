@@ -15,5 +15,20 @@ namespace Terminal_Emulator
         {
             InitializeComponent();
         }
+
+        private void bSend_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bClearRxText_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
