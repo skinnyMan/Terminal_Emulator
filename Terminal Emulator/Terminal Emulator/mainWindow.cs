@@ -29,22 +29,35 @@ namespace Terminal_Emulator
 
         private void bSend_Click(object sender, EventArgs e)
         {
-
+            comPort.Write(txTextBox.Text);
+            txTextBox.Clear();
         }
 
         private void bClearRxText_Click(object sender, EventArgs e)
         {
-
+            txTextBox.Clear();
+            rxTextBox.Clear();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (comPort.IsOpen)
+            {
+                comPort.Close();
+            }
             this.Close();
         }
 
+        private string receivedString;
         private void comPort_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
+            receivedString = comPort.ReadExisting();
+            this.Invoke(new EventHandler(displayText));
+        }
 
+        private void displayText(object o, EventArgs e)
+        {
+            rxTextBox.AppendText(receivedString);
         }
 
         private void serialOptionsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,6 +70,43 @@ namespace Terminal_Emulator
             comPort.DataBits = int.Parse(Settings.Default["dataBits"].ToString());
             comPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), Settings.Default["stopBits"].ToString());
         }
+
+        private void openComPortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!comPort.IsOpen)
+            {
+                comPort.Open();
+                rxTextBox.Text = "port opened";
+            }
+            else
+            {
+                rxTextBox.Text = "port busy";
+            }
+        }
+
+        private void txTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                comPort.Write(txTextBox.Text);
+                txTextBox.Clear();
+            }
+        }
+
+        private void closeComPortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (comPort.IsOpen)
+            {
+                comPort.Close();
+            }
+        }
+
+        private void rxTextBox_TextChanged(object sender, EventArgs e)
+        {
+            rxTextBox.ScrollToCaret();
+        }
+
+        
 
         
     }

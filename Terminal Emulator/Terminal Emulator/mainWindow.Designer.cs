@@ -36,11 +36,13 @@
             this.comPort = new System.IO.Ports.SerialPort(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openComPortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serialOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeComPortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +53,7 @@
             this.txTextBox.Size = new System.Drawing.Size(570, 23);
             this.txTextBox.TabIndex = 0;
             this.txTextBox.Text = "";
+            this.txTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txTextBox_KeyDown);
             // 
             // rxTextBox
             // 
@@ -59,6 +62,7 @@
             this.rxTextBox.Size = new System.Drawing.Size(570, 392);
             this.rxTextBox.TabIndex = 1;
             this.rxTextBox.Text = "";
+            this.rxTextBox.TextChanged += new System.EventHandler(this.rxTextBox_TextChanged);
             // 
             // bSend
             // 
@@ -99,15 +103,24 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openComPortToolStripMenuItem,
+            this.closeComPortToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // openComPortToolStripMenuItem
+            // 
+            this.openComPortToolStripMenuItem.Name = "openComPortToolStripMenuItem";
+            this.openComPortToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.openComPortToolStripMenuItem.Text = "Open Com Port";
+            this.openComPortToolStripMenuItem.Click += new System.EventHandler(this.openComPortToolStripMenuItem_Click);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -139,6 +152,13 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // closeComPortToolStripMenuItem
+            // 
+            this.closeComPortToolStripMenuItem.Name = "closeComPortToolStripMenuItem";
+            this.closeComPortToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.closeComPortToolStripMenuItem.Text = "Close Com Port";
+            this.closeComPortToolStripMenuItem.Click += new System.EventHandler(this.closeComPortToolStripMenuItem_Click);
             // 
             // mainWindow
             // 
@@ -175,6 +195,8 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem serialOptionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openComPortToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closeComPortToolStripMenuItem;
     }
 }
 
