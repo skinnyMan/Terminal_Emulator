@@ -20,11 +20,13 @@ namespace Terminal_Emulator
 
         private void settingsForm_Load(object sender, EventArgs e)
         {
-            this.cmbBaudRate.SelectedValue = Settings.Default["comPort"];
-            this.cmbBaudRate.SelectedValue = Settings.Default["comPort"];
-            this.cmbParity.SelectedValue = Settings.Default["baudRate"];
-            this.cmbDataBits.SelectedValue = Settings.Default["dataBits"];
-            this.cmbStopBits.SelectedValue = Settings.Default["stopBits"];
+            updatePorts();
+            this.cmbPortName.Text = Settings.Default["comPort"].ToString();
+            this.cmbBaudRate.Text = Settings.Default["baudRate"].ToString();
+            this.cmbParity.Text = Settings.Default["parity"].ToString();
+            this.cmbDataBits.Text = Settings.Default["dataBits"].ToString();
+            this.cmbStopBits.Text = Settings.Default["stopBits"].ToString();
+            
         }
 
         private void updatePorts()
@@ -38,17 +40,18 @@ namespace Terminal_Emulator
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            Settings.Default["comPort"] = cmbPortName.SelectedIndex;
-            Settings.Default["baudRate"] = cmbBaudRate.SelectedIndex;
-            Settings.Default["parity"] = cmbParity.SelectedIndex;
-            Settings.Default["dataBits"] = cmbDataBits.SelectedIndex;
-            Settings.Default["stopBits"] = cmbStopBits.SelectedIndex;
+            Settings.Default["comPort"] = cmbPortName.Text;
+            Settings.Default["baudRate"] = cmbBaudRate.Text;
+            Settings.Default["parity"] = cmbParity.Text;
+            Settings.Default["dataBits"] = cmbDataBits.Text;
+            Settings.Default["stopBits"] = cmbStopBits.Text;
             Settings.Default.Save();
+            this.Close();
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
         }
 
     }

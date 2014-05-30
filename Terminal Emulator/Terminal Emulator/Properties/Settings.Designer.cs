@@ -25,10 +25,10 @@ namespace Terminal_Emulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int comPort {
+        [global::System.Configuration.DefaultSettingValueAttribute("COM4")]
+        public string comPort {
             get {
-                return ((int)(this["comPort"]));
+                return ((string)(this["comPort"]));
             }
             set {
                 this["comPort"] = value;
@@ -38,9 +38,9 @@ namespace Terminal_Emulator.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("9600")]
-        public int baudRate {
+        public string baudRate {
             get {
-                return ((int)(this["baudRate"]));
+                return ((string)(this["baudRate"]));
             }
             set {
                 this["baudRate"] = value;
@@ -49,10 +49,10 @@ namespace Terminal_Emulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int parity {
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public string parity {
             get {
-                return ((int)(this["parity"]));
+                return ((string)(this["parity"]));
             }
             set {
                 this["parity"] = value;
@@ -61,9 +61,10 @@ namespace Terminal_Emulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public int dataBits {
+        [global::System.Configuration.DefaultSettingValueAttribute("8")]
+        public string dataBits {
             get {
-                return ((int)(this["dataBits"]));
+                return ((string)(this["dataBits"]));
             }
             set {
                 this["dataBits"] = value;
@@ -72,9 +73,10 @@ namespace Terminal_Emulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public int stopBits {
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public string stopBits {
             get {
-                return ((int)(this["stopBits"]));
+                return ((string)(this["stopBits"]));
             }
             set {
                 this["stopBits"] = value;

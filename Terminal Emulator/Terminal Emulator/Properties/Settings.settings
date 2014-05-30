@@ -2,20 +2,20 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Terminal_Emulator.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="comPort" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+    <Setting Name="comPort" Type="System.String" Scope="User">
+      <Value Profile="(Default)">COM4</Value>
     </Setting>
-    <Setting Name="baudRate" Type="System.Int32" Scope="User">
+    <Setting Name="baudRate" Type="System.String" Scope="User">
       <Value Profile="(Default)">9600</Value>
     </Setting>
-    <Setting Name="parity" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+    <Setting Name="parity" Type="System.String" Scope="User">
+      <Value Profile="(Default)">None</Value>
     </Setting>
-    <Setting Name="dataBits" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="dataBits" Type="System.String" Scope="User">
+      <Value Profile="(Default)">8</Value>
     </Setting>
-    <Setting Name="stopBits" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="stopBits" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
     </Setting>
   </Settings>
 </SettingsFile>
