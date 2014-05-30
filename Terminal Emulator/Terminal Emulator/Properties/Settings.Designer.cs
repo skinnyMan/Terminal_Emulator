@@ -25,7 +25,7 @@ namespace Terminal_Emulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int comPort {
             get {
                 return ((int)(this["comPort"]));
@@ -44,6 +44,40 @@ namespace Terminal_Emulator.Properties {
             }
             set {
                 this["baudRate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int parity {
+            get {
+                return ((int)(this["parity"]));
+            }
+            set {
+                this["parity"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public int dataBits {
+            get {
+                return ((int)(this["dataBits"]));
+            }
+            set {
+                this["dataBits"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public int stopBits {
+            get {
+                return ((int)(this["stopBits"]));
+            }
+            set {
+                this["stopBits"] = value;
             }
         }
     }

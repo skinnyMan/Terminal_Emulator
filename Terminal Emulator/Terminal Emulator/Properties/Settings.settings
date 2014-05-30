@@ -3,10 +3,19 @@
   <Profiles />
   <Settings>
     <Setting Name="comPort" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1</Value>
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="baudRate" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">9600</Value>
+    </Setting>
+    <Setting Name="parity" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="dataBits" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="stopBits" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>
