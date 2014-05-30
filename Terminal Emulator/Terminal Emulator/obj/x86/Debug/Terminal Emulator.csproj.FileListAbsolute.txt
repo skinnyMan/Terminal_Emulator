@@ -7,3 +7,4 @@ C:\Users\AJ\Documents\git\visual_studio\Terminal Emulator\Terminal Emulator\obj\
 C:\Users\AJ\Documents\git\visual_studio\Terminal Emulator\Terminal Emulator\bin\Debug\Terminal Emulator.exe.config
 C:\Users\AJ\Documents\git\visual_studio\Terminal Emulator\Terminal Emulator\obj\x86\Debug\Terminal_Emulator.mainWindow.resources
 C:\Users\AJ\Documents\git\visual_studio\Terminal Emulator\Terminal Emulator\obj\x86\Debug\Terminal_Emulator.settingsForm.resources
+C:\Users\AJ\Documents\git\visual_studio\Terminal Emulator\Terminal Emulator\obj\x86\Debug\Terminal Emulator.csprojResolveAssemblyReference.cache

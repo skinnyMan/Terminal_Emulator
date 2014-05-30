@@ -82,5 +82,29 @@ namespace Terminal_Emulator.Properties {
                 this["stopBits"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Lime")]
+        public global::System.Drawing.Color foreColor {
+            get {
+                return ((global::System.Drawing.Color)(this["foreColor"]));
+            }
+            set {
+                this["foreColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color backColor {
+            get {
+                return ((global::System.Drawing.Color)(this["backColor"]));
+            }
+            set {
+                this["backColor"] = value;
+            }
+        }
     }
 }

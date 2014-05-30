@@ -25,6 +25,11 @@ namespace Terminal_Emulator
             comPort.Parity = (Parity)Enum.Parse(typeof(Parity), Settings.Default["parity"].ToString());
             comPort.DataBits = int.Parse(Settings.Default["dataBits"].ToString());
             comPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), Settings.Default["stopBits"].ToString());
+
+            txTextBox.BackColor = Settings.Default.backColor;
+            rxTextBox.BackColor = Settings.Default.backColor;
+            txTextBox.ForeColor = Settings.Default.foreColor;
+            rxTextBox.ForeColor = Settings.Default.foreColor;
         }
 
         private void bSend_Click(object sender, EventArgs e)
@@ -76,17 +81,17 @@ namespace Terminal_Emulator
             if (!comPort.IsOpen)
             {
                 comPort.Open();
-                rxTextBox.Text = "port opened";
+                rxTextBox.Text = "port opened\n";
             }
             else
             {
-                rxTextBox.Text = "port busy";
+                rxTextBox.Text = "port busy\n";
             }
         }
 
         private void txTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.Enter)
+            if (comPort.IsOpen && e.KeyData == Keys.Enter)
             {
                 comPort.Write(txTextBox.Text);
                 txTextBox.Clear();
@@ -99,6 +104,7 @@ namespace Terminal_Emulator
             {
                 comPort.Close();
             }
+            rxTextBox.AppendText("Port Closed\n");
         }
 
         private void rxTextBox_TextChanged(object sender, EventArgs e)
@@ -106,8 +112,26 @@ namespace Terminal_Emulator
             rxTextBox.ScrollToCaret();
         }
 
-        
+        private void backgroundColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                txTextBox.BackColor = colorDialog.Color;
+                rxTextBox.BackColor = colorDialog.Color;
+                Settings.Default["textColor"] = colorDialog.Color;
+            }
+        }
 
-        
+        private void textColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                txTextBox.ForeColor = colorDialog.Color;
+                rxTextBox.ForeColor = colorDialog.Color;
+                Settings.Default["foreColor"] = colorDialog.Color;
+            }
+        }
     }
 }

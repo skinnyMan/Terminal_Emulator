@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.txTextBox = new System.Windows.Forms.RichTextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.backgroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rxTextBox = new System.Windows.Forms.RichTextBox();
             this.bSend = new System.Windows.Forms.Button();
             this.bClearRxText = new System.Windows.Forms.Button();
@@ -37,28 +40,55 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openComPortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeComPortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serialOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeComPortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txTextBox
             // 
+            this.txTextBox.ContextMenuStrip = this.contextMenuStrip1;
             this.txTextBox.Location = new System.Drawing.Point(12, 24);
+            this.txTextBox.Multiline = false;
             this.txTextBox.Name = "txTextBox";
             this.txTextBox.Size = new System.Drawing.Size(570, 23);
             this.txTextBox.TabIndex = 0;
             this.txTextBox.Text = "";
             this.txTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txTextBox_KeyDown);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.backgroundColorToolStripMenuItem,
+            this.textColorToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(171, 48);
+            // 
+            // backgroundColorToolStripMenuItem
+            // 
+            this.backgroundColorToolStripMenuItem.Name = "backgroundColorToolStripMenuItem";
+            this.backgroundColorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.backgroundColorToolStripMenuItem.Text = "Background Color";
+            this.backgroundColorToolStripMenuItem.Click += new System.EventHandler(this.backgroundColorToolStripMenuItem_Click);
+            // 
+            // textColorToolStripMenuItem
+            // 
+            this.textColorToolStripMenuItem.Name = "textColorToolStripMenuItem";
+            this.textColorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.textColorToolStripMenuItem.Text = "Text Color";
+            this.textColorToolStripMenuItem.Click += new System.EventHandler(this.textColorToolStripMenuItem_Click);
+            // 
             // rxTextBox
             // 
+            this.rxTextBox.ContextMenuStrip = this.contextMenuStrip1;
             this.rxTextBox.Location = new System.Drawing.Point(12, 53);
             this.rxTextBox.Name = "rxTextBox";
+            this.rxTextBox.ReadOnly = true;
             this.rxTextBox.Size = new System.Drawing.Size(570, 392);
             this.rxTextBox.TabIndex = 1;
             this.rxTextBox.Text = "";
@@ -113,9 +143,18 @@
             // openComPortToolStripMenuItem
             // 
             this.openComPortToolStripMenuItem.Name = "openComPortToolStripMenuItem";
-            this.openComPortToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.openComPortToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.openComPortToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.openComPortToolStripMenuItem.Text = "Open Com Port";
             this.openComPortToolStripMenuItem.Click += new System.EventHandler(this.openComPortToolStripMenuItem_Click);
+            // 
+            // closeComPortToolStripMenuItem
+            // 
+            this.closeComPortToolStripMenuItem.Name = "closeComPortToolStripMenuItem";
+            this.closeComPortToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.closeComPortToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.closeComPortToolStripMenuItem.Text = "Close Com Port";
+            this.closeComPortToolStripMenuItem.Click += new System.EventHandler(this.closeComPortToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -153,13 +192,6 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // closeComPortToolStripMenuItem
-            // 
-            this.closeComPortToolStripMenuItem.Name = "closeComPortToolStripMenuItem";
-            this.closeComPortToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.closeComPortToolStripMenuItem.Text = "Close Com Port";
-            this.closeComPortToolStripMenuItem.Click += new System.EventHandler(this.closeComPortToolStripMenuItem_Click);
-            // 
             // mainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,6 +206,7 @@
             this.Name = "mainWindow";
             this.Text = "Terminal Emulator";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -197,6 +230,9 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openComPortToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeComPortToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem backgroundColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem textColorToolStripMenuItem;
     }
 }
 
