@@ -34,8 +34,13 @@ namespace Terminal_Emulator
 
         private void bSend_Click(object sender, EventArgs e)
         {
-            comPort.Write(txTextBox.Text);
-            txTextBox.Clear();
+            if (comPort.IsOpen)
+            {
+                comPort.Write(txTextBox.Text);
+                txTextBox.Clear();
+            }
+            else
+                rxTextBox.AppendText("Port Closed");
         }
 
         private void bClearRxText_Click(object sender, EventArgs e)
@@ -81,11 +86,11 @@ namespace Terminal_Emulator
             if (!comPort.IsOpen)
             {
                 comPort.Open();
-                rxTextBox.Text = "port opened\n";
+                rxTextBox.Text = "Port Opened\n";
             }
             else
             {
-                rxTextBox.Text = "port busy\n";
+                rxTextBox.Text = "Port Busy\n";
             }
         }
 
@@ -104,7 +109,7 @@ namespace Terminal_Emulator
             {
                 comPort.Close();
             }
-            rxTextBox.AppendText("Port Closed\n");
+            rxTextBox.Text = "Port Closed\n";
         }
 
         private void rxTextBox_TextChanged(object sender, EventArgs e)
@@ -132,6 +137,11 @@ namespace Terminal_Emulator
                 rxTextBox.ForeColor = colorDialog.Color;
                 Settings.Default["foreColor"] = colorDialog.Color;
             }
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

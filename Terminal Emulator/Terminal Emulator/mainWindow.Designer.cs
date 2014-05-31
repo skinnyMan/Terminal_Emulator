@@ -89,6 +89,7 @@
             this.rxTextBox.Location = new System.Drawing.Point(12, 53);
             this.rxTextBox.Name = "rxTextBox";
             this.rxTextBox.ReadOnly = true;
+            this.rxTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
             this.rxTextBox.Size = new System.Drawing.Size(570, 392);
             this.rxTextBox.TabIndex = 1;
             this.rxTextBox.Text = "";
@@ -126,7 +127,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(690, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(694, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -143,8 +144,8 @@
             // openComPortToolStripMenuItem
             // 
             this.openComPortToolStripMenuItem.Name = "openComPortToolStripMenuItem";
-            this.openComPortToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.openComPortToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.openComPortToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openComPortToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.openComPortToolStripMenuItem.Text = "Open Com Port";
             this.openComPortToolStripMenuItem.Click += new System.EventHandler(this.openComPortToolStripMenuItem_Click);
             // 
@@ -159,7 +160,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -189,14 +190,15 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // mainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 456);
+            this.ClientSize = new System.Drawing.Size(694, 454);
             this.Controls.Add(this.bClearRxText);
             this.Controls.Add(this.bSend);
             this.Controls.Add(this.rxTextBox);
